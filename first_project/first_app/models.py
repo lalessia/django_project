@@ -9,7 +9,7 @@ class Journalist(models.Model):
     last_name = models.CharField(max_length=25)
 
     def __str__(self):
-        return f"{self.first_name} {self.first_name}"
+        return f"{self.first_name} {self.last_name}"
 
 # Create Article models
 class Article(models.Model):
