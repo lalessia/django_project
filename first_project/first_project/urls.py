@@ -25,5 +25,5 @@ urlpatterns = [
     #ex. http://127.0.0.1:8000/first_app/hello/
     #path("", welcome, name="welcome"),
     path("", fa_views.home, name="home"),
-    path("home/", fa_views.home, name="home"),
+    #path("home/", fa_views.home, name="home"),
     ]
