@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 #model field references: https://docs.djangoproject.com/en/5.0/ref/models/fields/
 #making query: https://docs.djangoproject.com/en/5.0/topics/db/queries/
@@ -19,6 +20,9 @@ class Article(models.Model):
     #NB settando il parametro on_delete=models.CASCADE, diciamo di cancellare tutti gli articoli a esso assegnati
     journalist = models.ForeignKey(Journalist, on_delete=models.CASCADE, related_name="articles") 
 
-
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        #"art_detail" è lo stesso nome settato nell'urls.py
+        return reverse("art_detail", kwargs={"pk": self.pk})
